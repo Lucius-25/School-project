@@ -1,0 +1,1 @@
+sass scss/app.scss css/list.css --watch

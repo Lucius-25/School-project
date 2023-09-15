@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tc{
+            display: flex;
+            padding: 15px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        #output{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset class="tc">
+        <legend>Text Control</legend>
+        <div class="">
+            <label for="">Text Input</label>
+            <input type="text" name="" id="textInput">
+        </div>
+
+        <div class="">
+            <label for="">Text Color</label>
+            <input type="color" name="" id="colorInput">
+        </div>
+
+        <div class="">
+            <label for="">Font Size</label>
+            <input type="range" name="" id="fontInput" min="16" value="16" max="100">
+        </div>
+        
+        <div class="">
+            <label for="">Font Style</label>
+            <select name="" id="selectFont">
+                <!-- <option value="IR">Impact Regular</option>
+                <option value="JIR">Juice ITC Regular</option> -->
+            </select>
+        </div>
+
+    </fieldset>
+
+    <h1 id="output"></h1>
+<!-- 
+    <div class="">
+        <label for="">My text</label>
+        <input type="text" id="myInput" name="">
+    </div>
+
+    <h1 id="result"></h1> -->
+
+    <script>
+
+        const fonts = [
+            "Impact Regular",
+            "Juice ITC Regular",
+        ]
+
+        //Selector
+
+        const textInput = document.querySelector("#textInput");
+        const colorInput = document.querySelector("#colorInput");
+        const fontInput = document.querySelector("#fontInput");
+        const output = document.querySelector("#output");
+        const selectFont = document.querySelector("#selectFont");
+        
+        //Function
+
+        const createOption = (text, value) => {
+            const option = document.createElement("option");
+            option.innerText = text;
+            option.value = value;
+            return option;
+        }
+
+        //Process
+
+        textInput.addEventListener("keyup", () => {
+            output.innerText = textInput.value
+        })
+
+        colorInput.addEventListener("change", () => {
+            output.style.color = colorInput.value
+        })
+
+        fontInput.addEventListener("change", () => {
+            output.style.fontSize = fontInput.value + "px"
+        })
+
+        // selectFont.append(createOption())
+
+        fonts.forEach(font =>{
+            selectFont.append(createOption(font, font))
+        })
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
+
+        // const myInput = document.querySelector("#myInput");
+        // const result = document.querySelector("#result");
+
+        // myInput.addEventListener("keyup", () => {
+        //     console.log("yep");
+        //     result.value = myInput.innerText
+        // })
+
+        selectFont.addEventListener("change", () => {
+            output.style.fontFamily = selectFont.value
+        })
+
+    </script>
+
+</body>
+</html>

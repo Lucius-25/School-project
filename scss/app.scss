@@ -13,7 +13,39 @@ $input-border-color: $primary;
 $input-border-width: 2px;
 
 $border-radius-lg: 0;
+$border-radius-sm: 0;
 
 $form-check-input-border-radius: 0;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+.slide-from-left{
+    animation: slideFromLeft 0.5s;
+}
+
+@keyframes slide-from-left{
+    from{
+        transform: translateX(-300px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+.record-empty-row:last-child{
+    display: table-row;
+}
+
+.record-empty-row{
+    display: none;
+}
+
+body{
+    counter-reset: row-count;
+}
+
+.row-num::before{
+    counter-increment: row-count;
+    content: counter(row-count);
+}
