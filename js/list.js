@@ -8,18 +8,19 @@ const lists = document.querySelector("#lists ");
 //function
 
 const handleNewList = () => {
-  const list = createList(textInput.value)
-  lists.append(list);
-  list.querySelector(".animate__animated").addEventListener("animationend", () => {
-    console.log("hello");
-    list.querySelector(".animate__animated")
-    .classList.remove("animate__fadeInUp" , "animate__shakeX")
-  })
-
-
-  countList()
-
-  textInput.value = null;
+  
+    const list = createList(textInput.value)
+    lists.append(list);
+    list.querySelector(".animate__animated").addEventListener("animationend", () => {
+      console.log("hello");
+      list.querySelector(".animate__animated")
+      .classList.remove("animate__fadeInUp" , "animate__shakeX")
+    })
+  
+    countList()
+  
+    textInput.value = null;
+  
 }
 
 const makeRandomId = (length) => {
@@ -34,8 +35,6 @@ const makeRandomId = (length) => {
   return result;
 
 }
-
-
 
 // console.log(makeRandomId(10));
 
@@ -159,11 +158,7 @@ const countNewList = (event) => {
 countList()
 addBtn.addEventListener("click", handleNewList)
 
-textInput.addEventListener("keyup", (event) => {
-  if(event.key === "Enter"){
-    handleNewList()
-  }
-})
+textInput.addEventListener("keyup", handleNewList)
 
 // idk how to find
 
@@ -173,3 +168,6 @@ if(event.key === "Enter"){
 }
 })
 
+document.addEventListener("click", (event) => {
+  console.log(event.target);
+})
