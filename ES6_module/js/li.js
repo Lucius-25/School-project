@@ -1,3 +1,5 @@
+import { delBtnHandler } from "./ui/handler.js";
+
 export const createLi = (text) => {
     const li = document.createElement("li");
     li.classList.add("mt-2")
@@ -9,9 +11,7 @@ export const createLi = (text) => {
     const textNode = document.createTextNode(" "+ text)
     li.append(textNode)
 
-    delBtn.addEventListener("click", () => {
-        console.log(li);
-    })
+    delBtn.addEventListener("click", delBtnHandler)
 
     return li;
 }

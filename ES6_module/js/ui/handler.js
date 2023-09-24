@@ -12,5 +12,7 @@ export const saveBtnHandler = () => {
 }
 
 export const delBtnHandler = (event) => {
-    console.log(event.target.closest("li"));
+    event.target.closest("li").remove();
+    app.querySelector("#counter").innerText = lists.children.length;
+
 }

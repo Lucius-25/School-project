@@ -90,11 +90,11 @@ const createRecordRow = (product, quantity) => {
       updateExistedRecord(product,1)
     })
 
-    const rowQuantityDecrement =tr.querySelector(".row-quantity-decrement")
-    rowQuantityDecrement.addEventListener("click", () => {
-      console.log("minus");
-      updateExistedRecord(product,-1)
-    })
+    // const rowQuantityDecrement =tr.querySelector(".row-quantity-decrement")
+    // rowQuantityDecrement.addEventListener("click", () => {
+    //   console.log("minus");
+    //   updateExistedRecord(product,-1)
+    // })
 
 
   return tr;

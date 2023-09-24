@@ -1,14 +1,7 @@
-import { appTitle, counter, lists, saveBtn, textInput } from "./element.js"
-import {  saveBtnHandler } from "./ui/handler.js";
-
+import Todo from "./ui/todo.js";
 
 export const app = document.querySelector("#app");
 
-app.append(appTitle)
-app.append(textInput)
-app.append(saveBtn)
-app.append(lists)
-app.append(counter)
+const todo = new Todo();
 
-saveBtn.addEventListener("click", saveBtnHandler)
-// delBtnSelector.addEventListener("click", delBtnHandler)
+todo.init()
